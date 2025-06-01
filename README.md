@@ -3,12 +3,12 @@ Este projeto é uma API RESTful para gerenciamento de veículos, desenvolvida us
 Ela permite o cadastro, consulta, atualização e venda de veículos, integrando-se com um banco de dados PostgreSQL e utilizando Keycloak para autenticação e autorização do cliente.
 
 ### Tecnologias Utilizadas
-* Spring Boot,
-* Spring Data JPA,
-* Spring Security,
-* PostgreSQL,
-* Keycloak,
-* Docker Compose,
+* Spring Boot
+* Spring Data JPA
+* Spring Security
+* PostgreSQL
+* Keycloak
+* Docker Compose
 * Lombok
 
 ### Estrutura do Projeto
