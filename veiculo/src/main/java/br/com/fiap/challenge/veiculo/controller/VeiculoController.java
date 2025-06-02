@@ -95,7 +95,6 @@ public class VeiculoController {
         if(veiculoOptional.get().getVeiculoStatus() != VeiculoStatus.DISPONIVEL){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Veículo já vendido.");
         }
-
         var veiculoModel = veiculoOptional.get();
 
         veiculoModel.setVeiculoStatus(VeiculoStatus.VENDIDO);
@@ -104,5 +103,18 @@ public class VeiculoController {
         veiculoService.salvarVeiculo(veiculoModel);
 
         return ResponseEntity.status(HttpStatus.OK).body("Veículo vendido com sucesso.");
+    }
+
+    @DeleteMapping("/{veiculoId}")
+    public ResponseEntity<Object> deletarVeiculo(@PathVariable("veiculoId") UUID veiculoId) {
+        var veiculoOptional = veiculoService.buscarVeiculoPorId(veiculoId);
+
+        if (veiculoOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Veículo não encontrado");
+        }
+
+        veiculoService.deletarVeiculo(veiculoOptional.get().getVeiculoId());
+
+        return ResponseEntity.status(HttpStatus.OK).body("Veículo deletado.");
     }
 }
