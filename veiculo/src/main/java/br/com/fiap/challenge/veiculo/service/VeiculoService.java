@@ -16,4 +16,6 @@ public interface VeiculoService {
 
     Optional<VeiculoModel> buscarVeiculoPorId(UUID veiculoId);
 
+    void deletarVeiculo(UUID veiculoId);
+
 }

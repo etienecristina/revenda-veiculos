@@ -34,4 +34,9 @@ public class VeiculoServiceImpl implements VeiculoService {
     public Optional<VeiculoModel> buscarVeiculoPorId(UUID veiculoId) {
         return veiculoRepository.findById(veiculoId);
     }
+
+    @Override
+    public void deletarVeiculo(UUID veiculoId) {
+        veiculoRepository.deleteById(veiculoId);
+    }
 }
